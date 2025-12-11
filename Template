@@ -1,0 +1,54 @@
+ALGORITHM [AlgorithmName] in [Programming Language/Paradigm]
+// Purpose: [Brief description of what this algorithm does]
+// Input: [Describe input parameters and their types]
+// Output: [Describe what is returned and its type]
+
+
+function descriptiveFunctionName(parameter1, parameter2) //[What this function does]
+    const variableName1 = []; //[Purpose of this variable]
+    const variableName2 = []; //[Purpose of this variable]
+    
+    WHILE [condition] DO
+        [action or operation]
+        IF [condition] THEN
+            [action]
+        END IF
+    END WHILE
+    
+    FOR [iterator] IN [collection] DO
+        [action or operation]
+    END FOR
+    
+    functionCall(arg1, arg2); //[What this function call accomplishes]
+    
+    return outputVariable //[What is being returned and why]
+end function
+
+
+EXAMPLE:
+ALGORITHM MakeToast for JavaScript
+// Purpose: Creates toast from bread using a toaster
+// Input: bread (string), toasterSetting (number 1-5)
+// Output: toast (object with properties: done, darkness level)
+
+function makeToast(bread, toasterSetting) //takes bread and setting, returns finished toast
+    const toaster = {}; //stores toaster state and properties
+    const toast = {}; //stores the final toast object
+    
+    toaster.slot = bread; //place bread in toaster slot
+    toaster.setting = toasterSetting; //set darkness level
+    toaster.isToasting = true; //start toasting cycle
+    toast.darkness = 0; //initialize darkness level at zero
+    
+    WHILE toaster.isToasting DO
+        toast.darkness = toast.darkness + 1; //increment darkness level by 1
+        IF toast.darkness >= toasterSetting THEN
+            toaster.isToasting = false; //stop toasting when target reached
+            popUp(toaster); //eject toast from toaster
+        END IF
+    END WHILE
+    
+    toast.done = true; //mark toast as complete
+    
+    return toast //returns finished toast object with darkness level
+end function
